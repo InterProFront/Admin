@@ -61,7 +61,7 @@
                             preview_link: $('.preview_link'+image_selector+'[data-field-name="'+field_name+'"]').val(),
                             icon_link: $('.icon_link'+image_selector+'[data-field-name="'+field_name+'"]').val(),
                             prefix: $('.prefix'+image_selector+'[data-field-name="'+field_name+'"]').val(),
-                            alt:          $('.image_alt'+image_selector+'[data-field-name="'+field_name+'"]').val()
+                            alt:          $('.alt-text'+image_selector+'[data-field-name="'+field_name+'"]').val()
                         };
                     } else {
 

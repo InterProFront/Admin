@@ -12,7 +12,8 @@
             primary:   'primary_link',
             secondary: 'secondary_link',
             icon:      'icon_link',
-            preview:   'preview_link'
+            preview:   'preview_link',
+            alt:       'alt-text'
         });
 
     });
