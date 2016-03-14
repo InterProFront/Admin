@@ -54,7 +54,7 @@ $(document).ready(function(){
         );
     }
 
-    $('.piblicated').on('change',function(){
+    $('.publicated').on('change',function(){
             var block = $(this).parents('tbody').data('block');
             var id = $(this).parents('tr').data('id');
             if ($(this).val() == 'true'){
