@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "bootstrap": "~3.3.4",
-    "jquery": "1",
+    "jquery": "2",
     "moment": "~2.10.3",
     "trumbowyg": "~2.0.0",
     "eonasdan-bootstrap-datetimepicker": "~4.15.35"
