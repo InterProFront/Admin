@@ -164,6 +164,18 @@
 
         $(document).anysave('.any_save');
 
+        $('.save_all').on('click',function(){
+            var lenght = $('.any_save').length;
+            var step = 100 / lenght;
+            var curr = 0;
+           $('.any_save').each(function(){
+               $(this).click();
+               curr+= step;
+               $('.bar').css('width',curr+'%');
+
+           });
+        });
+
     });
 
 })(jQuery);

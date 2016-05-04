@@ -1,0 +1,114 @@
+.image-load{
+  border:1px solid @dark-4;
+  background: @white;
+  padding: 5px;
+  max-height: 102px;
+  height: 90px;
+  .drag-n-drop{
+    height:90px;
+    display: flex;
+    .drag{
+      display: none;
+    }
+    .preview-block{
+      display: flex;
+      flex-basis: 20%;
+      .preview{
+        width: 158px;
+        height: 88px;
+        border: 1px solid @dark-4;
+      }
+      .buttons{
+        flex-basis:40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 5px;
+        .refresh{
+          background: url(images/reload.png) no-repeat center center;
+          background-size: 20px 20px ;
+          width: 20px;
+          height: 20px;
+          position: relative;
+          display: block;
+          border:1px solid @dark-4;
+          padding: 10px;
+          margin-left: 5px;
+          &:hover{
+            border: 1px solid @blue;
+            cursor: pointer;
+          }
+        }
+        .clear{
+          background: url(images/clear-button.png) no-repeat center center;
+          background-size: 20px 20px ;
+          width: 20px;
+          height: 20px;
+          position: relative;
+          display: block;
+          border:1px solid @dark-4;
+          padding: 10px;
+          margin-left: 5px;
+          &:hover{
+            border: 1px solid @blue;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .action-block{
+      flex-basis: 80%;
+      .alt-text {
+        width: 100%;
+        resize: none;
+        font-size: 16px;
+        color: #333333;
+        padding: 11px 10px;
+        box-sizing: border-box;
+        border: 1px solid @dark-4;
+        &:hover {
+          border: 1px solid @blue-h;
+        }
+        &:focus {
+          outline: none;
+          border: 1px solid @blue-h;
+        }
+      }
+      label.file-input{
+        background: @blue;
+        color: @white;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size:16px;
+        padding: 12px 0;
+        margin-top: 6px;
+        &:hover{
+          background: @blue-h;
+          cursor: pointer;
+        }
+        input[type="file"]{
+          display: none;
+        }
+      }
+    }
+    &.dragable{
+      .drag{
+        display: block;
+        width: 100%;
+        input{
+          width: 100%;
+          color: @dark-2;
+          border:2px dashed @dark-3;
+          text-align: center;
+          padding: 35px;
+          box-sizing: border-box;
+
+        }
+      }
+      .preview-block, .action-block{
+        display: none;
+      }
+    }
+  }
+}
