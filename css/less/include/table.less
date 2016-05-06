@@ -1,0 +1,41 @@
+table{
+  width: 100%;
+  border-spacing: 1px;
+  border-collapse: collapse;
+  thead{
+    width: 100%;
+    tr{
+      width: 100%;
+      td{
+        text-align: left;
+        color: #ffffff;
+        background: @dark-0;
+        padding: 5px 15px;
+        border: none;
+      }
+    }
+  }
+  tbody{
+    tr{
+      background: #ffffff;
+      border-bottom: 1px solid @dark-4;
+      td{
+        padding: 5px 15px;
+        a{
+          color: @blue;
+          &:hover{
+            color: @blue-h;
+          }
+        }
+      }
+    }
+  }
+  tfoot{
+    tr{
+      background: @dark-0;
+      td{
+        padding: 5px 5px;
+      }
+    }
+  }
+}
