@@ -14,6 +14,39 @@ $(document).ready(function () {
             $(this).children('.triangle').html('▼');
         }
     });
+    $.trumbowyg.btnsGrps.test = ['bold', 'link'];
+    var customizedButtonPaneTbwOptions = {
+        resetCss: true,
+        removeformatPasted: true,
+        lang: 'en',
+        closable: true,
+        fixedBtnPane: true,
+        tagsToRemove: ['script', 'style'],
+        btnsDef: {
+            // Customizables dropdowns
+            align: {
+                dropdown: ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                ico: 'justifyLeft'
+            },
+            image: {
+                dropdown: ['insertImage', 'upload'],
+                ico: 'insertImage'
+            }
+        },
+        btns: ['viewHTML',
+            '|', 'formatting',
+            '|', 'btnGrp-test',
+            '|', 'align',
+            '|', 'btnGrp-lists',
+            '|', 'image',
+            '|', 'foreColor', 'backColor',
+            '|', 'removeformat']
+    };
+    $('textarea')
+        .trumbowyg(customizedButtonPaneTbwOptions)
+        .on('dblclick', function(){
+            $(this).trumbowyg(customizedButtonPaneTbwOptions);
+        });
 
     $.fn.dndhover = function (options) {
 
