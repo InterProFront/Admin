@@ -21,6 +21,7 @@
             var dataobj = {};
             dataobj['block'] = block_name;
             dataobj['entity'] = entity_name;
+            dataobj['group'] = group_name;
 
             dataobj['stringfields'] = {};
             dataobj['textfields'] = {};
