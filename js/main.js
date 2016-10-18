@@ -14,7 +14,18 @@ $(document).ready(function () {
             $(this).children('.triangle').html('▼');
         }
     });
-    $.trumbowyg.btnsGrps.test = ['bold', 'link'];
+    $('.select-item').on('click',function(){
+        $('.select-item').removeClass('active');
+        if( $(this).attr('href') == '#seo'){
+            $('.seo-wrap').css('display','block');
+            $('.content-wrap').css('display','none');
+            $(this).addClass('active');
+        }else{
+            $('.content-wrap').css('display','block');
+            $('.seo-wrap').css('display','none');
+            $(this).addClass('active');
+        }
+    });
     var customizedButtonPaneTbwOptions = {
         resetCss: true,
         removeformatPasted: true,
@@ -34,12 +45,13 @@ $(document).ready(function () {
             }
         },
         btns: ['viewHTML',
-            '|', 'formatting',
-            '|', 'btnGrp-test',
+             'formatting',
+             'bold',
+            'italic',
+             'link',
             '|', 'align',
             '|', 'btnGrp-lists',
             '|', 'image',
-            '|', 'foreColor', 'backColor',
             '|', 'removeformat']
     };
     $('textarea')
@@ -78,7 +90,7 @@ $(document).ready(function () {
     };
     function translit() {
         var space = '-';
-        var text = $('.input[data-field-name="name"]').val().toLowerCase();
+        var text = $('.input[data-field-name="category_name"]').val().toLowerCase();
         var transl = {
             'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh',
             'з': 'z', 'и': 'i', 'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
@@ -114,7 +126,7 @@ $(document).ready(function () {
         $('.input[data-field-name="slug"]').val(result);
     }
 
-    $('.input[data-field-name="name"]').keyup(function () {
+    $('.input[data-field-name="category_name"]').keyup(function () {
         translit();
     });
     $('body').on('click', function () {
