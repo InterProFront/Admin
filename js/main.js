@@ -88,7 +88,6 @@ $(document).ready(function () {
             $(this).trumbowyg(customizedButtonPaneTbwOptions);
         });
 
-    $('input[data-field-name=seo_description]').trumbowyg(customizedButtonPaneTbwOptions);
     $.fn.dndhover = function (options) {
 
         return this.each(function () {
