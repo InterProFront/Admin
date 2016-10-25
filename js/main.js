@@ -14,15 +14,43 @@ $(document).ready(function () {
             $(this).children('.triangle').html('▼');
         }
     });
-    $('.select-item').on('click',function(){
+
+    $('.load-price').on('click', function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var file = new FormData();
+        if ($('.price-list-send')[0].files[0] != undefined) {
+            file.append('price', $('.price-list-send')[0].files[0]);
+        }
+        var deffered = $.ajax({
+            type: 'POST',
+            url: '/adm/price',
+            contentType: false,
+            processData: false,
+            data: file
+        });
+        deffered.done(function(data){
+            if(data.status == "OK"){
+                $('.input-field[data-field-name=price_name]').val(data.name);
+                $('.global-save').click();
+            }
+        });
+    });
+
+
+    $('.select-item').on('click', function () {
         $('.select-item').removeClass('active');
-        if( $(this).attr('href') == '#seo'){
-            $('.seo-wrap').css('display','block');
-            $('.content-wrap').css('display','none');
+        if ($(this).attr('href') == '#seo') {
+            $('.seo-wrap').css('display', 'block');
+            $('.content-wrap').css('display', 'none');
             $(this).addClass('active');
-        }else{
-            $('.content-wrap').css('display','block');
-            $('.seo-wrap').css('display','none');
+        } else {
+            $('.content-wrap').css('display', 'block');
+            $('.seo-wrap').css('display', 'none');
             $(this).addClass('active');
         }
     });
@@ -45,10 +73,10 @@ $(document).ready(function () {
             }
         },
         btns: ['viewHTML',
-             'formatting',
-             'bold',
+            'formatting',
+            'bold',
             'italic',
-             'link',
+            'link',
             '|', 'align',
             '|', 'btnGrp-lists',
             '|', 'image',
@@ -56,10 +84,11 @@ $(document).ready(function () {
     };
     $('textarea')
         .trumbowyg(customizedButtonPaneTbwOptions)
-        .on('dblclick', function(){
+        .on('dblclick', function () {
             $(this).trumbowyg(customizedButtonPaneTbwOptions);
         });
 
+    $('input[data-field-name=seo_description]').trumbowyg(customizedButtonPaneTbwOptions);
     $.fn.dndhover = function (options) {
 
         return this.each(function () {
